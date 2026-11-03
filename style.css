@@ -22,12 +22,15 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 header ul {
+    width: 100%;
     display: flex;
     gap: 25px;
     list-style-type: none;
+    flex-wrap: wrap;
 }
 
 header ul li:hover {
@@ -628,7 +631,7 @@ button {
     gap: 0.5rem;
     max-width: 100%;
 
-        background-color: #1565C0;
+    background-color: #1565C0;
     color: #FFFFFF;
 
 }
@@ -708,3 +711,652 @@ button {
 }
 
 /*seccion 8-------------------------------------------------*/
+.btn-fill-left {
+    position: relative;
+    overflow: hidden;
+    background: #1565C0;
+    color: #FFFFFF;
+    border: none;
+    z-index: 1;
+}
+
+.btn-fill-left::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #0D47A1;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+    z-index: -1;
+}
+
+.btn-fill-left:hover::before {
+    transform: translateX(0);
+}
+
+.btn-fill-bottom {
+    background: #1565C0;
+    color: #FFFFFF;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.btn-fill-bottom::before {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    content: "";
+    background: #0d47a1;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+    z-index: -1;
+}
+
+.btn-fill-bottom:hover::before {
+    transform: translateY(0);
+}
+
+.btn-fill-center {
+    overflow: hidden;
+    background: #1565C0;
+    color: #FFFFFF;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-fill-center::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    inset: 0;
+    background: #0D47A1;
+    scale: 0;
+    transition: scale 0.4s ease;
+}
+
+.btn-fill-center:hover::before {
+    scale: 1;
+}
+
+.btn-shine {
+    position: relative;
+    overflow: hidden;
+    background: #1565C0;
+    color: #FFFFFF;
+    border: none;
+}
+
+.btn-shine::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skewX(-25deg);
+    transition: left 0.5s ease;
+}
+
+.btn-shine:hover::before {
+    left: 150%;
+}
+
+.btn-underline-expand {
+    position: relative;
+    background: #FFFFFF;
+    color: #1565C0;
+    border: none;
+}
+
+.btn-underline-expand::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    width: 0;
+    height: 2px;
+    background: #1565C0;
+    transition: width 0.3s ease, right 0.3s ease;
+}
+
+.btn-underline-expand:hover::after {
+    width: 100%;
+    right: 0;
+}
+
+.btn-corners {
+    position: relative;
+    background: #FFFFFF;
+    color: #1565C0;
+    border: none;
+    overflow: hidden;
+}
+
+.btn-corners::before,
+.btn-corners::after {
+    content: "";
+    position: absolute;
+    width: 15%;
+    height: 30%;
+    border-color: #1565C0;
+    border-style: solid;
+    transition: all 0.3s ease;
+}
+
+.btn-corners::before {
+    top: 0;
+    left: 0;
+    border-width: 2px 0 0 2px;
+}
+
+.btn-corners::after {
+    bottom: 0;
+    right: 0;
+    border-width: 0 2px 2px 0;
+}
+
+.btn-corners:hover::before,
+.btn-corners:hover::after {
+    width: 100%;
+    height: 100%;
+}
+
+.btn-double-layer {
+    position: relative;
+    overflow: hidden;
+    background: #1565C0;
+    color: #FFFFFF;
+    border: none;
+    z-index: 1;
+}
+
+.btn-double-layer::before,
+.btn-double-layer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transition: transform 0.4s ease;
+    z-index: -1;
+}
+
+.btn-double-layer::before {
+    background: #0D47A1;
+    transform: translateX(-100%);
+}
+
+.btn-double-layer::after {
+    background: #4C1D95;
+    transform: translateX(100%);
+}
+
+.btn-double-layer:hover::before,
+.btn-double-layer:hover::after {
+    transform: translateX(0);
+}
+
+.btn-circle-expand {
+    position: relative;
+    overflow: hidden;
+    background: #1565C0;
+    color: #FFFFFF;
+    border: none;
+    isolation: isolate;
+}
+
+.btn-circle-expand::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: #0D47A1;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease, height 0.5s ease;
+    z-index: -1;
+}
+
+.btn-circle-expand:hover::before {
+    width: 200%;
+    height: 200%;
+}
+
+.btn-border-reveal {
+    position: relative;
+    background: #FFFFFF;
+    color: #1565C0;
+    border: none;
+}
+
+.btn-border-reveal::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px solid #1565C0;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.btn-border-reveal:hover::before {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.btn-diagonal-sweep {
+    position: relative;
+    overflow: hidden;
+    background: #1565C0;
+    color: #FFFFFF;
+    border: none;
+    z-index: 1;
+}
+
+.btn-diagonal-sweep::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    background: #0D47A1;
+    translate: -150%;
+    transform: skewX(-25deg);
+
+    transition:
+        translate 0.4s ease,
+        transform 1s ease 0.4s;
+
+    z-index: -1;
+}
+
+.btn-diagonal-sweep:hover::before {
+    translate: 0 0;
+    transform: skewX(0);
+}
+
+/*categoría 9-----------------------------*/
+
+.btn-pulse {
+    background: var(--fondo-por-defecto);
+    color: var(--texto-por-defecto);
+    animation: pulso 1.5s ease-in-out infinite;
+}
+
+@keyframes pulso {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.5);
+    }
+}
+
+@keyframes latido {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    10%,
+    30% {
+        transform: scale(1.12);
+    }
+
+    20%,
+    40% {
+        transform: scale(1);
+    }
+}
+
+.btn-heartbeat {
+    background: var(--fondo-por-defecto);
+    color: var(--texto-por-defecto);
+    animation: latido 1.5s ease-in-out infinite;
+}
+
+@keyframes flotante {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.btn-float {
+    background: var(--fondo-por-defecto);
+    color: var(--texto-por-defecto);
+    animation: flotante 2s ease-in-out infinite;
+}
+
+@keyframes sacudida {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+}
+
+.btn-shake {
+    background: var(--fondo-por-defecto);
+    color: var(--texto-por-defecto);
+}
+
+.btn-shake:hover {
+    animation: sacudida 0.4s ease;
+}
+
+@keyframes rebote {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    30% {
+        transform: translateY(-12px);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+
+    70% {
+        transform: translateY(-5px);
+    }
+}
+
+.btn-bounce {
+    background: var(--fondo-por-defecto);
+    color: var(--texto-por-defecto);
+}
+
+.btn-bounce:hover {
+    animation: rebote 0.6s ease;
+}
+
+@keyframes brillo {
+
+    0%,
+    100% {
+        box-shadow: 0 0 5px #22D3EE;
+    }
+
+    50% {
+        box-shadow: 0 0 20px #22D3EE;
+    }
+}
+
+.btn-glow-pulse {
+    background: #111827;
+    color: #FFFFFF;
+    animation: brillo 1.5s ease-in-out infinite;
+}
+
+@keyframes degradado {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.btn-gradient-motion {
+    background: linear-gradient(90deg,
+            #1E3A8A,
+            #6D28D9,
+            #1E3A8A);
+    background-size: 200% 200%;
+    color: #FFFFFF;
+    animation: degradado 3s ease infinite;
+}
+
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.btn-icon-spin {
+    background: var(--fondo-por-defecto);
+    color: var(--texto-por-defecto);
+}
+
+.btn-icon-spin:hover i {
+    animation: girar 0.8s linear;
+}
+
+@keyframes cargar {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.btn-loading {
+    background: #1E3A8A;
+    color: #FFFFFF;
+    cursor: wait;
+}
+
+.btn-loading::before {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: 2px solid #FFFFFF;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: cargar 0.8s linear infinite;
+}
+
+@keyframes secuencia {
+    0% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 0 0 transparent;
+    }
+
+    30% {
+        transform: translateY(-10px) scale(1);
+        box-shadow: 0 8px 15px #111827;
+    }
+
+    60% {
+        transform: translateY(-10px) scale(1.1);
+        box-shadow: 0 12px 20px #111827;
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 0 0 transparent;
+    }
+}
+
+.btn-sequence {
+    background: var(--fondo-por-defecto);
+    color: var(--texto-por-defecto);
+}
+
+.btn-sequence:hover {
+    animation: secuencia 1s ease;
+}
+
+/*sección 10------------------------------------*/
+.btn-neon {
+    background: #111827;
+    color: #FFFFFF;
+    border: 2px solid #22D3EE;
+    box-shadow: 0 0 5px #22D3EE;
+    transition: box-shadow 0.3s ease;
+}
+
+.btn-neon:hover {
+    box-shadow: 0 0 10px #22D3EE,
+        0 0 25px #22D3EE,
+        0 0 40px #22D3EE;
+}
+
+.btn-glass {
+    background: rgba(255, 255, 255, 0.2);
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background 0.3s ease;
+}
+
+.btn-glass:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.btn-neumorphic {
+    background: #E5E7EB;
+    color: #111827;
+    border: none;
+    box-shadow: 5px 5px 10px #9CA3AF,
+        -5px -5px 10px #FFFFFF;
+    transition: box-shadow 0.3s ease;
+}
+
+.btn-neumorphic:hover {
+    box-shadow: inset 4px 4px 8px #9CA3AF,
+        inset -4px -4px 8px #FFFFFF;
+}
+
+.btn-retro-3d {
+    background: #FACC15;
+    color: #111827;
+    border: 2px solid #111827;
+    box-shadow: 0 5px 0 #111827;
+    transition: transform 0.1s ease,
+        box-shadow 0.1s ease;
+}
+
+.btn-retro-3d:active {
+    transform: translateY(5px);
+    box-shadow: 0 0 0 #111827;
+}
+
+.btn-metallic {
+    background: linear-gradient(135deg,
+            #E5E7EB,
+            #9CA3AF,
+            #F9FAFB);
+    color: #111827;
+    border: 1px solid #111827;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-metallic::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(110deg,
+            transparent,
+            rgba(255, 255, 255, 0.8),
+            transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.btn-metallic:hover::before {
+    transform: translateX(100%);
+}
+
+@keyframes arcoiris {
+    0% {
+        border-color: #1565C0;
+    }
+
+    50% {
+        border-color: #6D28D9;
+    }
+
+    100% {
+        border-color: #B91C1C;
+    }
+}
+
+.btn-rainbow-border {
+    background: #111827;
+    color: #FFFFFF;
+    border: 3px solid #1565C0;
+    animation: arcoiris 3s linear infinite;
+}
+
+.btn-double-text {
+    background: var(--fondo-por-defecto);
+    color: var(--texto-por-defecto);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-double-text span {
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.btn-double-text span:last-child {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(100%);
+}
+
+.btn-double-text:hover span:first-child {
+    transform: translateY(-100%);
+}
+
+.btn-double-text:hover span:last-child {
+    transform: translateY(0);
+}
+
+.btn-cinematic {
+    background: var(--fondo-por-defecto);
+    color: var(--texto-por-defecto);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.55)), url("./images/back-ground.jpeg");
+    background-size: cover;
+    background-position: center;
+    border: none;
+    transition: background-position 0.5s ease,
+        filter 0.5s ease;
+}
+
+.btn-cinematic:hover {
+    background-position: center 60%;
+    filter: brightness(1.2);
+}
